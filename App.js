@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , TextInput} from 'react-native';
+import { StyleSheet ,Text, View , TextInput} from 'react-native';
 
 const btns = props => {}
 
@@ -44,16 +44,13 @@ const styles = StyleSheet.create({
   keysContainer: {
     width : "100%",
     height : "60%",
-    marginTop : "12%",
-    paddingTop : 7,
+    marginTop : "15%",
     backgroundColor : colors.red,
-    flex: 1,
+    flexWrap : "wrap"
   },
-  LRkeysCont : {
+  LRKeysCont : {
     height : "100%",
-    borderWidth : 2,
-    borderColor : "white",
-    backgroundColor : "white",
+    backgroundColor : "#888",
   },
   LKeysCont : {
     width : "75%",
