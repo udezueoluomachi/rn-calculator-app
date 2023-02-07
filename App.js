@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet , Text , View, Alert} from 'react-native';
+import { StyleSheet , Text , View, Alert, TouchableNativeFeedback} from 'react-native';
 
 
 export default function App() {
@@ -8,9 +8,8 @@ export default function App() {
   
   const BBtn = props => {
     return(
-      <View style={styles.BBtn} onpress={() => {
-        Alert.alert("0");
-        let str = screenValue.trim();
+      <TouchableNativeFeedback onPress={() => {
+        let str = screenValue;
         if(props.val == "=") {
           setScreenValue(eval(str))
         }
@@ -19,23 +18,36 @@ export default function App() {
           setScreenValue(str)
         }
       }}>
-        <Text style={styles.BtnText}>
-          {props.val}
-        </Text>
-      </View>
+        <View style={styles.BBtn}>
+          <Text style={styles.BtnText}>
+            {props.val}
+          </Text>
+        </View>
+      </TouchableNativeFeedback>
     )
   }
 
   const SBtn = props => {
     return (
-      <View style={[styles.SBtn, {
-        backgroundColor :  props.val == "Del" ? colors.red : colors.purple,
-        borderRadius : 10,
-        }]}>
-        <Text style={styles.BtnText}>
-          {props.val}
-        </Text>
-      </View>
+      <TouchableNativeFeedback onPress={() => {
+        let str = screenValue;
+        if(props.val == "Del") {
+          setScreenValue(str.slice(0, -1))
+        }
+        else {
+          str += props.val;
+          setScreenValue(str)
+        }
+      }}>
+        <View style={[styles.SBtn, {
+          backgroundColor :  props.val == "Del" ? colors.red : colors.purple,
+          borderRadius : 10,
+          }]}>
+          <Text style={styles.BtnText}>
+            {props.val}
+          </Text>
+        </View>
+      </TouchableNativeFeedback>
     )
   }
   return (
