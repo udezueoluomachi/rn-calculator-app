@@ -5,14 +5,15 @@ export default function App() {
   return (
 	<View style={styles.container}>
 	  <View style={styles.screen}>
-	  <Text style={{fontWeight: "800", fontSize: 50, color : "#777"}}>Hello world</Text>
+	  </View>
+	  <View style={styles.keysContainer}>
 	  </View>
 	</View>
   );
 }
 
 const colors = {
-  Red : "#FF3124",
+  red : "#FF3124",
   purple : "#AC24FF",
   white1 : "#ffffff",
   white2 : "#929292",
@@ -23,20 +24,24 @@ const colors = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#101010',
+    backgroundColor: colors.black1,
     alignItems: "center",
-    //justifyContent: 'center',
-    paddingTop: 24,
+    padding: 14,
+    height: "100%",
+    width: "100%",
   },
   screen: {
     padding: 10,
-    height: 90,
-    width: 310,
-    borderColor: "#999",
-    borderWidth: 1,
-    marginTop: 25,
+    height: "26%" ,
+    width: "100%",
+    marginTop: 45,
+    backgroundColor: colors.black2,
   },
-  maxWidth: {
-    width: 310
+  keysContainer: {
+    width : "100%",
+    height : "60%",
+    marginTop : "12%",
+    paddingTop : 7,
+    backgroundColor : colors.red,
   }
 });
