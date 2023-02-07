@@ -11,6 +11,15 @@ export default function App() {
   );
 }
 
+const colors = {
+  Red : "#FF3124",
+  purple : "#AC24FF",
+  white1 : "#ffffff",
+  white2 : "#929292",
+  black1 : "#161616",
+  black2 : "#1E1E1E"
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
