@@ -12,3 +12,7 @@ web-build/
 
 # macOS
 .DS_Store
+
+# Github keys
+github-key.pub
+github-key
