@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet , Text , View, Alert, TouchableNativeFeedback} from 'react-native';
+import { StyleSheet , Text , View, TouchableNativeFeedback} from 'react-native';
 
 
 export default function App() {
@@ -38,7 +37,7 @@ export default function App() {
           str += props.val;
           setScreenValue(str)
         }
-      }}>
+      }} onLongPress={() => props.val == "Del" ? setScreenValue("") : null}>
         <View style={[styles.SBtn, {
           backgroundColor :  props.val == "Del" ? colors.red : colors.purple,
           borderRadius : 10,
@@ -50,6 +49,7 @@ export default function App() {
       </TouchableNativeFeedback>
     )
   }
+  
   return (
     <View style={styles.container}>
       <View style={styles.screen}>
